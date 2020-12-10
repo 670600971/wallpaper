@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="robots" content="noarchive">
+    <title>老罗壁纸</title>
+    <link rel='stylesheet' id='style-css' href='/index/static/css/style.css' type='text/css' />
+    <link rel='stylesheet' id='fonts-css' href='/index/static/css/iconfont.css' type='text/css' />
+    <link rel='stylesheet' id='fancybox-css' href='/index/static/css/jquery.fancybox.min.css' type='text/css' />
+    <script type='text/javascript' src='/index/static/js/jquery.min.js'></script>
+    <script type='text/javascript' src='/index/static/js/jquery-migrate.min.js'></script>
+    <meta name='description' content='包含4K壁纸,美女壁纸,美女图片,风景壁纸,动漫壁纸,明星图片,动物图片,动物壁纸,游戏壁纸,等18个分类的电脑壁纸，支持放大预览和下载。' />
+    <meta name='keywords' content='4K壁纸,美女壁纸,美女图片,风景壁纸,动漫壁纸,明星图片,动物图片,动物壁纸,游戏壁纸,必应壁纸,bing壁纸,必应美图' />
+    <link rel="stylesheet" href="/index/css/player.css">
+    <style type='text/css'>
+        html {
+            --accent-color: #4370F5;
+        }
+
+        .site-main {
+            min-height: 700px;
+        }
+        .wallpaper-tags ul li{
+                cursor:pointer
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site">
+        <header class="site-header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="hamburger">
+                        <div class="hamburgerli"></div>
+                    </div>
+                    <div class="branding-within">
+                         <a class="logo" href="" rel="home">
+                            
+                             <img src="/index/img/logo.jpg" style="border-radius: 25px;" alt="图标">
+                        </a> 
+                    </div>
+                    <div class="branding-within">
+                            等待
+                    </div>                    
+                    <nav class="main-menu hidden-xs hidden-sm hidden-md">
+                        <ul id="menu-primary" class="nav-list u-plain-list">
+                            <li id="menu-item-1047"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1047">
+                                <a href="{:url('baidu/index')}" target="_blank">帮你百度一下</a></li>
+                            <li id="menu-item-1067"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1067"><a
+                                    href="{:url('movie/index')}" target="_blank">影视网</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="off-canvas">
+            <div class="mobile-menu"> </div>
+            <div class="close"> <i class="iconfont icon-guanbi1"></i> </div>
+        </div>
+        <div class="site-content container">
+            <div class="row">
+                <div class="col-lg-img">
+                    <div class="wallpaper-tags">
+                        <ul>
+                            <li data-id="36" onclick="loadData(36, true);changeTitle(this)">4K专区</li>
+                            <li data-id="6" onclick="loadData(6, true);changeTitle(this)">美女模特</li>
+                            <li data-id="30" onclick="loadData(30, true);changeTitle(this)">爱情美图</li>
+                            <li data-id="9" onclick="loadData(9, true);changeTitle(this)">风景大片</li>
+                            <li data-id="15" onclick="loadData(15, true);changeTitle(this)">小清新</li>
+                            <li data-id="26" onclick="loadData(26, true);changeTitle(this)">动漫卡通</li>
+                            <li data-id="11" onclick="loadData(11, true);changeTitle(this)">明星风尚</li>
+                            <li data-id="14" onclick="loadData(14, true);changeTitle(this)">萌宠动物</li>
+                            <li data-id="5" onclick="loadData(5, true);changeTitle(this)">游戏壁纸</li>
+                            <li data-id="12" onclick="loadData(12, true);changeTitle(this)">汽车天下</li>
+                            <li data-id="10" onclick="loadData(10, true);changeTitle(this)">炫酷时尚</li>
+                            <li data-id="29" onclick="loadData(29, true);changeTitle(this)">月历壁纸</li>
+                            <li data-id="7" onclick="loadData(7, true);changeTitle(this)">影视剧照</li>
+                            <li data-id="13" onclick="loadData(13, true);changeTitle(this)">节日美图</li>
+                            <li data-id="22" onclick="loadData(22, true);changeTitle(this)">军事天地</li>
+                            <li data-id="16" onclick="loadData(16, true);changeTitle(this)">劲爆体育</li>
+                            <li data-id="18" onclick="loadData(18, true);changeTitle(this)">BABY秀</li>
+                            <li data-id="35" onclick="loadData(35, true);changeTitle(this)">文字控</li>
+                        </ul>
+                    </div>
+                    <div class="content-area">
+                        <main class="site-main">
+                            <article class="type-post post-wallpaper">
+                                <div class="container-wallpaper">
+                                    <div class="jigsaw" id="walBox"></div>
+                                    <div id="loadmore">壁纸加载中……</div>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <!--<div class="site-info"> <a class="footerlogo" href="javascript:void(0)" target="_blank"><img-->
+            <!--            src="https://api.vvhan.com//index/static/img/logo.png" alt="韩小韩博客"></a>-->
+            <!--    <div class="site-infor">-->
+            <!--        <a href="javascript:void(0)" target="_blank">小韩影视</a>-->
+            <!--        |<script type="text/javascript"-->
+            <!--            src="https://s23.cnzz.com/z_stat.php?id=1276399794&web_id=1276399794"></script>-->
+            <!--    </div>-->
+            <!--</div>-->
+            <!--<div class="site-info">-->
+            <!--    <div class="site-infol"> 本站部分内容来源于互联网，如有侵犯贵司或您的权益，请联系本站管理员！<a class="footerlogo" style="color:#ffffff"-->
+            <!--            href="https://api.vvhan.com" target="_blank">由韩小韩API接口提供技术支持</a> </div>-->
+            <!--    <div class="site-infor"> ©2019-2020<a rel="nofollow" target="_blank"-->
+            <!--            href="https://beian.miit.gov.cn/">苏ICP备17017222号</a> </div>-->
+            <!--</div>-->
+        </footer>
+    </div>
+    <div class="gotop"> <a id="goTopBtn" href="javascript:;"><i class="iconfont icon-shang"></i><em>返回顶部</em></a></div>
+
+        <div id="QPlayer">
+        <div id="pContent">
+            <div id="player">
+                <span class="cover"></span>
+                <div class="ctrl">
+                    <div class="musicTag marquee">
+                        <strong>Title</strong>
+                         <span> - </span>
+                        <span class="artist">Artist</span>
+                    </div>
+                    <div class="progress">
+                        <div class="timer left">0:00</div>
+                        <div class="contr">
+                            <div class="rewind icon"></div>
+                            <div class="playback icon"></div>
+                            <div class="fastforward icon"></div>
+                        </div>
+                        <div class="right">
+                            <div class="liebiao icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ssBtn">
+                    <div class="adf"></div>
+            </div>
+        </div>
+        <ol id="playlist"></ol>
+        </div>
+        
+
+        <!--<script src="/index/js/jquery.min.js"></script>-->
+        <script src="/index/js/jquery.marquee.min.js"></script>
+        <script>
+            var	playlist = [
+            {title:"天下",artist:"高鱼",mp3:"http://music.163.com/song/media/outer/url?id=1386460251.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},   
+            {title:"偏爱钢琴版",artist:"偏爱",mp3:"http://music.163.com/song/media/outer/url?id=1425015717.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},    
+
+            {title:"搁浅",artist:"曹格",mp3:"https://sharefs.yun.kugou.com/202012081659/04bec00a430c288213867f2989d8c2fc/G229/M0B/17/15/JQ4DAF928EmALd02ADg1juyrxUA263.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"運命のルーレット廻して(转动命运之轮)（翻自 ZARD）",artist:"坂井泉水",mp3:"http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_20671047&response=res&type=convert_url&",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"愿你余生漫长",artist:"王贰浪",mp3:"http://music.163.com/song/media/outer/url?id=1471339778.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"我很好",artist:"刘大壮",mp3:"http://music.163.com/song/media/outer/url?id=1491221473.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"会不会（吉他版）",artist:"刘大壮",mp3:"http://music.163.com/song/media/outer/url?id=1481164987.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"说散就散 (说唱版)",artist:"成少Music",mp3:"http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_156030707&response=res&type=convert_url&",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            {title:"晚安",artist:"阿漫",mp3:"https://sharefs.yun.kugou.com/202012081710/9336236c7b7f46ec2662d9e9edbf6b56/G166/M06/0B/18/hpQEAF0SME2AF9HpAEVnUTo4gOM251.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+            // {title:"美人画卷",artist:"成少Music",mp3:"./mei.mp3",cover:"http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106",},
+        ];
+          var isRotate = true;
+          var autoplay = true;
+        </script>
+        <script src="/index/js/player.js"></script>
+        <script>
+        
+        
+        
+        function bgChange(){
+            var lis= $('.lib');
+            for(var i=0; i<lis.length; i+=2)
+            lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+        }
+        window.onload = bgChange;
+        $(".ssBtn").trigger("click");
+        
+        // $(".playback").trigger("click"); 
+        
+        
+        </script>
+    <script type='text/javascript' src='/index/static/js/hans.min.js'></script>
+    <script type='text/javascript' src='/index/static/js/jquery.fancybox.min.js'>
+    </script>
+    <script type='text/javascript' src='/index/static/js/jquery.lazyload.min.js'>
+    </script>
+    <script type='text/javascript' src='/index/static/js/img.js'></script>
+    <script type="text/javascript">
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = new Array("❤");
+                var $i = $("<span/>").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "#dd3333"
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                }, 1500, function () {
+                    $i.remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
